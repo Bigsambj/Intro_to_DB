@@ -51,24 +51,23 @@ CREATE TABLE IF NOT EXISTS Orders (
 
 -- Order_Details table
 CREATE TABLE IF NOT EXISTS Order_Details (
-    orderdetailid BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    order_id BIGINT UNSIGNED NOT NULL,
-    book_id BIGINT UNSIGNED NOT NULL,
-    quantity DOUBLE NOT NULL DEFAULT 1,
+    orderdetailid INT NOT NULL AUTO_INCREMENT,
+    order_id INT NOT NULL,
+    book_id INT NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
     PRIMARY KEY (orderdetailid),
     INDEX idx_od_order_id (order_id),
     INDEX idx_od_book_id (book_id),
     CONSTRAINT fk_orderdetails_orders
-        FOREIGN KEY (order_id)
-        REFERENCES Orders (order_id)
+        FOREIGN KEY (order_id) REFERENCES Orders(order_id)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
     CONSTRAINT fk_orderdetails_books
-        FOREIGN KEY (book_id)
-        REFERENCES Books (book_id)
+        FOREIGN KEY (book_id) REFERENCES Books(book_id)
         ON DELETE RESTRICT
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- Optional: Example sample inserts (uncomment to use)
 -- INSERT INTO Authors (author_name) VALUES ('Chinua Achebe'), ('Jane Austen');
