@@ -69,6 +69,7 @@ CREATE TABLE IF NOT EXISTS Order_Details (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
+
 -- Optional: Example sample inserts (uncomment to use)
 -- INSERT INTO Authors (author_name) VALUES ('Chinua Achebe'), ('Jane Austen');
 -- INSERT INTO Books (title, author_id, price, publication_date) VALUES ('Things Fall Apart', 1, 12.50, '1958-06-17'), ('Pride and Prejudice', 2, 9.99, '1813-01-28');
