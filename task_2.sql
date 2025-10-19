@@ -63,14 +63,15 @@ CREATE TABLE IF NOT EXISTS Order_Details (
     INDEX idx_od_order_id (order_id),
     INDEX idx_od_book_id (book_id),
     CONSTRAINT fk_orderdetails_orders
-        FOREIGN KEY (order_id) REFERENCES Orders (order_id)
+        FOREIGN KEY (order_id) REFERENCES Orders(order_id)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
     CONSTRAINT fk_orderdetails_books
-        FOREIGN KEY (book_id) REFERENCES Books (book_id)
+        FOREIGN KEY (book_id) REFERENCES Books(book_id)
         ON DELETE RESTRICT
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- OPTIONAL: Example inserts (commented out)
 -- INSERT INTO Authors (author_name) VALUES ('Author One'), ('Author Two');
