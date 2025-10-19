@@ -48,13 +48,12 @@ CREATE TABLE IF NOT EXISTS Orders (
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
 -- Order_Details table
 CREATE TABLE IF NOT EXISTS Order_Details (
     orderdetailid INT NOT NULL AUTO_INCREMENT,
     order_id INT NOT NULL,
     book_id INT NOT NULL,
-    quantity INT NOT NULL DEFAULT 1,
+    quantity DOUBLE NOT NULL DEFAULT 1,
     PRIMARY KEY (orderdetailid),
     INDEX idx_od_order_id (order_id),
     INDEX idx_od_book_id (book_id),
