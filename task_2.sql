@@ -47,10 +47,11 @@ CREATE TABLE IF NOT EXISTS Orders (
     PRIMARY KEY (order_id),
     INDEX idx_orders_customer_id (customer_id),
     CONSTRAINT fk_orders_customers
-        FOREIGN KEY (customer_id) REFERENCES Customers (customer_id)
+        FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
         ON DELETE RESTRICT
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- ORDER_DETAILS table
 CREATE TABLE IF NOT EXISTS Order_Details (
